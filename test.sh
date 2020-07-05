@@ -5,7 +5,7 @@ HOST=ubuntu@localhost
 FILE=`pwd`/test.txt
 
 expected=`cat $FILE`
-out=`$RTAIL $HOST $FILE`
+out=`$RTAIL -p22222 $HOST $FILE`
 
 if [[ "$expected" != "$out" ]]; then
   echo "fail"
