@@ -1,7 +1,7 @@
 #!/bin/bash
 
 RTAIL=./rtail.sh
-HOST=localhost
+HOST=ubuntu@localhost
 FILE=`pwd`/test.txt
 
 expected=`cat $FILE`

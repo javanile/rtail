@@ -13,8 +13,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: run test
-      run: echo Hello, world!
+    - name: run test with coverage
+      run: make coverage
     
     - uses: javanile/ci-lcov-sh-action@master
       env:

@@ -5,7 +5,13 @@ MANPREFIX ?= $(PREFIX)/share/man/man1
 
 $(BIN): test man
 
-test:
+.PHONY: coverage
+
+fake-ssh-server:
+	docker rm -f fake-ssh-server
+	docker run --name fake-ssh-server -p 22:22 -v $(PWD):$(PWD) --rm -d javanile/fake-ssh-server
+
+test: fake-ssh-server
 	./test.sh
 
 install:
@@ -19,3 +25,6 @@ uninstall:
 man:
 	@curl -# -F page=@rtail.1.md -o rtail.1 http://mantastic.herokuapp.com
 	@echo "rtail.1"
+
+coverage:
+	curl -fsSL git.io/lcov.sh | bash -s -- test.sh

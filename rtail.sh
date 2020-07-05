@@ -1,5 +1,7 @@
 #!/bin/bash
 
+[[ -z "${LCOV_DEBUG}" ]] || set -x
+
 VERSION="0.0.4"
 NULL=/dev/null
 STDIN=0
