@@ -26,5 +26,5 @@ man:
 	@curl -# -F page=@rtail.1.md -o rtail.1 http://mantastic.herokuapp.com
 	@echo "rtail.1"
 
-coverage:
+coverage: fake-ssh-server
 	curl -fsSL git.io/lcov.sh | bash -s -- test.sh
