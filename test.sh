@@ -4,6 +4,8 @@ RTAIL=./rtail.sh
 HOST=ubuntu@localhost
 FILE=`pwd`/test.txt
 
+ssh -p22222 -oStrictHostKeyChecking=no ${HOST} true
+
 expected=`cat $FILE`
 out=`$RTAIL -p22222 $HOST $FILE`
 
