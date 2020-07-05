@@ -13,7 +13,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: run test with coverage
+    - name: Run test with coverage
       run: sudo apt install lcov && make coverage
     
     - uses: javanile/ci-lcov-sh-action@master

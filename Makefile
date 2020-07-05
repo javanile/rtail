@@ -8,7 +8,7 @@ $(BIN): test man
 .PHONY: coverage
 
 fake-ssh-server:
-	docker rm -f fake-ssh-server
+	docker rm -f fake-ssh-server || true
 	docker run --name fake-ssh-server -p 22:22 -v $(PWD):$(PWD) --rm -d javanile/fake-ssh-server
 
 test: fake-ssh-server
