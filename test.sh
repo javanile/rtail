@@ -4,6 +4,7 @@ RTAIL=./rtail.sh
 HOST=ubuntu@localhost
 FILE=`pwd`/test.txt
 
+## Perform the first connection to fake-ssh-server to get know_hosts updated
 ssh -p22222 -oStrictHostKeyChecking=no ${HOST} true
 
 expected=`cat $FILE`
